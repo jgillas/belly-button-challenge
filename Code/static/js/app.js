@@ -33,12 +33,12 @@ function buildMetadata(sample) {
         console.log(value)
 
         let valueData = value[0]; 
-        d3.select("#sample_one-metadata").html("");
+        d3.select("#sample-metadata").html("");
 
         Object.entries(valueData).forEach(([key,value])=> {
             console.log(key,value);
-
-            d3.json("sample_one-metadata").append("h5").text(`${key}: ${value}`);
+            
+            d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
         });
     });
 };
@@ -57,9 +57,9 @@ function buildBarChart(sample) {
 
         console.log(sample_values, otu_ids, otu_labels);
 
-        let yticks = otu_ids.slice(0,5).map(id => `OTU ${id}`).slice().reverse();
-        let xticks = sample_values.slice(0,5).slice().reverse();
-        let labels = otu_labels.slice(0,5).slice().reverse();
+        let yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).slice().reverse();
+        let xticks = sample_values.slice(0,10).slice().reverse();
+        let labels = otu_labels.slice(0,10).slice().reverse();
 
         let trace = {
             x: xticks,
@@ -74,14 +74,14 @@ function buildBarChart(sample) {
         let layout = {
             title: "Top 10 OTUs Present",
             margin: {
-                l: 100,
-                r: 100,
-                t: 100,
-                b: 100
+                l: 150,
+                r: 20,
+                t: 50,
+                b: 50
             }
         };
 
-        Plotly.nePlot("bar", traceData, layout)
+        Plotly.newPlot("bar", traceData, layout)
     });
 };
 
@@ -92,7 +92,7 @@ function buildBubbleChart(sample) {
 
         let value = sampleInfo.filter(result => result.id == sample);
 
-        let valueData = [0]; 
+        let valueData = value[0]; 
 
         let sample_values = valueData.sample_values;
         let otu_ids = valueData.otu_ids;
@@ -115,7 +115,9 @@ function buildBubbleChart(sample) {
         let layout = {
             title: "Bacteria Per Sample", 
             hovermode: "closest", 
-            xaxis: {title: "OTU ID"}, 
+            xaxis: {title: "OTU ID"},
+            height: 600,
+            width: 1000
         };
 
         Plotly.newPlot("bubble", [trace1], layout)
