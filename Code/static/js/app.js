@@ -100,7 +100,7 @@ function buildBubbleChart(sample) {
 
         console.log(sample_values, otu_ids, otu_labels);
 
-        let trace1 = {
+        let trace = {
             x: otu_ids, 
             y: sample_values, 
             text: otu_labels,
@@ -112,6 +112,8 @@ function buildBubbleChart(sample) {
             }
         };
 
+        let traceData = [trace]
+
         let layout = {
             title: "Bacteria Per Sample", 
             hovermode: "closest", 
@@ -120,7 +122,7 @@ function buildBubbleChart(sample) {
             width: 1000
         };
 
-        Plotly.newPlot("bubble", [trace1], layout)
+        Plotly.newPlot("bubble", traceData, layout)
     });
 };
 
