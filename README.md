@@ -20,4 +20,4 @@ The next thing I did was I displayed the sample metadata information (the test s
 
   <img width="176" alt="Screenshot 2023-06-12 at 2 13 55 PM" src="https://github.com/jgillas/belly-button-challenge/assets/125215083/226acf18-0ed6-40a7-bba9-65043c956743">
 
-The last thing that I did was update all the plots when a new sample is selected. This concludes this assignment. 
+The last thing that I did was update all the plots when a new sample is selected. Also all the charts and data plots will update atuomatically whenever the user choices a new subject ID from the drop down menu. This concludes this assignment. 
