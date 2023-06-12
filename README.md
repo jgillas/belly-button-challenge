@@ -15,3 +15,9 @@ The next thing I did was create a bubble chart to display each sample. The otu_i
 A picture of the bubble chart I created is below: 
 
   ![bubblechart](https://github.com/jgillas/belly-button-challenge/assets/125215083/15660236-dff6-446c-b4c4-db1a0c5326f8)
+
+The next thing I did was I displayed the sample metadata information (the test subject's demographic information). In the demographic information each key-value pair from the metadata JSON object is displayed. This includes the id number, their ethnicity, their gender, their age, their location, their bbtype and their wfreq. A picture of the demographic information chart is below: 
+
+  <img width="176" alt="Screenshot 2023-06-12 at 2 13 55 PM" src="https://github.com/jgillas/belly-button-challenge/assets/125215083/226acf18-0ed6-40a7-bba9-65043c956743">
+
+The last thing that I did was update all the plots when a new sample is selected. This concludes this assignment. 
